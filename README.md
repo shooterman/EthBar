@@ -5,7 +5,7 @@ A status bar widget for OS X that displays the latest price of Ethercoin(ETH) fr
 
 ## Note
 
-####Frozen, wait for the permission of origin author of btcbar.
+####Frozen, wait for the permission from origin author of btcbar.
 
 
 ### 1.0.0
