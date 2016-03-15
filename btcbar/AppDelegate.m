@@ -27,13 +27,7 @@
 
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
-               [[BitFinexUSDFetcher alloc] init],
-               [[BitStampUSDFetcher alloc] init],
-               [[BTCeUSDFetcher alloc] init],
-               [[CoinbaseUSDFetcher alloc] init],
-               [[HuobiUSDFetcher alloc] init],
-               [[OKCoinUSDFetcher alloc] init],
-               [[WinkDexUSDFetcher alloc] init],
+               [[YunbiEthFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
@@ -58,10 +52,11 @@
         new_menuitem.tag = [tickers indexOfObject:ticker];
         [btcbarMainMenu addItem:new_menuitem];
     }
+    [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"Open in Browser" action:@selector(menuActionBrowser:) keyEquivalent:@""]];
 
     // Add the separator, Open in Browser, and Quit items to main menu
     [btcbarMainMenu addItem:[NSMenuItem separatorItem]];
-    [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"Open in Browser" action:@selector(menuActionBrowser:) keyEquivalent:@""]];
+    [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"About" action:@selector(menuActionAbout:) keyEquivalent:@"a"]];
     [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"Quit" action:@selector(menuActionQuit:) keyEquivalent:@"q"]];
 
     // Set the default ticker's menu item state to checked
@@ -71,7 +66,7 @@
     btcbarStatusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 
     // Set status bar image
-    NSImage *image = [NSImage imageNamed:@"btclogo"];
+    NSImage *image = [NSImage imageNamed:@"ethlogo"];
     [image setTemplate:YES];
     [btcbarStatusItem.button setImage:image];
     [btcbarStatusItem.button setImagePosition:NSImageLeft];
@@ -165,6 +160,39 @@
 {
     for (id <Fetcher> ticker in tickers)
         [ticker requestUpdate];
+}
+
+#define kWebAddress            @"\nEthBar is an open source project: \nhttps://github.com/cnkevinlee/btcbar/ \n\nBase on \nhttps://github.com/nearengine/btcbar \n\nby  KevinLi, designer."
+
+- (IBAction)menuActionAbout:(id)sender {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"About EthBar"
+                                     defaultButton:@"About me"
+                                   alternateButton:@"Cancel"
+                                       otherButton:@""
+                         informativeTextWithFormat:kWebAddress];
+    
+    long button = [alert runModal];
+    
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    switch (button) {
+        case NSAlertOtherReturn:
+            NSLog(@"copy");
+            [pasteboard clearContents];
+            [pasteboard writeObjects:[NSArray arrayWithObject:kWebAddress]];
+            break;
+        case NSAlertDefaultReturn:
+        {
+            NSLog(@"Don't copy");
+            NSString* url=@"http://kevin-li.com/";
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+            break;
+        }
+        case NSAlertAlternateReturn:
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

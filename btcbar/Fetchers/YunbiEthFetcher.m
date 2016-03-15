@@ -1,21 +1,24 @@
 //
-//  CoinbaseUSDFetcher.m
+//  OKCoinUSDFetcher.m
 //  btcbar
 //
+//  Created by Tim Daubenschütz on 22/01/15.
+//  Copyright (c) 2015 nearengine. All rights reserved.
+//
 
-#import "CoinbaseUSDFetcher.h"
+#import "YunbiEthFetcher.h"
 
-@implementation CoinbaseUSDFetcher
+@implementation YunbiEthFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"CoinbaseUSD";
+        self.ticker_menu = @"云币 ETH";
         
         // Website location
-        self.url = @"https://coinbase.com/";
+        self.url = @"https://yunbi.com/markets/ethcny";
         
         // Immediately request first update
         [self requestUpdate];
@@ -37,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://coinbase.com/api/v1/prices/spot_rate"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/ethcny.json"]];
     
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (CoinbaseUSDFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"btcbar/2.0 (YunbiEthFetcher)" forHTTPHeaderField:@"User-Agent"];
     
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -79,16 +82,19 @@
     if(results)
     {
         // Get API status
-        NSString *resultsStatus = [results objectForKey:@"amount"];
+        NSDictionary *ticker = [results objectForKey:@"ticker"];
+        NSString *resultsStatus = [ticker objectForKey:@"last"];
+        
         
         // If API call succeeded update the ticker...
         if(resultsStatus)
         {
-            NSDecimalNumber *resultsStatusNumber = [NSDecimalNumber decimalNumberWithString:resultsStatus];
             NSNumberFormatter *currencyStyle = [[NSNumberFormatter alloc] init];
-            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            currencyStyle.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-CN"];
             currencyStyle.numberStyle = NSNumberFormatterCurrencyStyle;
-            self.ticker = [currencyStyle stringFromNumber:resultsStatusNumber];
+            
+            self.error = nil;
+            self.ticker = [currencyStyle stringFromNumber:[NSDecimalNumber decimalNumberWithString:resultsStatus]];
         }
         // Otherwise log an error...
         else
@@ -108,8 +114,9 @@
 // HTTP request failed
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to Coinbase.", NSLocalizedFailureReasonErrorKey, nil]];
+    self.error = [NSError errorWithDomain:@"com.nearengine.btcbar" code:0 userInfo:[NSDictionary dictionaryWithObjectsAndKeys: @"Connection Error", NSLocalizedDescriptionKey, @"Could not connect to OKCoin.", NSLocalizedFailureReasonErrorKey, nil]];
     self.ticker = nil;
 }
+
 
 @end

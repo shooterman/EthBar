@@ -1,5 +1,5 @@
 //
-//  WinkDexUSDFetcher.h
+//  OKCoinUSDFetcher.h
 //  btcbar
 //
 //  Created by Tim Daubenschütz on 22/01/15.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Fetcher.h"
 
-@interface WinkDexUSDFetcher : NSObject<Fetcher, NSURLConnectionDelegate>
+@interface YunbiEthFetcher : NSObject<Fetcher, NSURLConnectionDelegate>
 
 @property (nonatomic) NSString* ticker;
 @property (nonatomic) NSString* ticker_menu;
