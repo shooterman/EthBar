@@ -1,5 +1,5 @@
 
-![Screenshot](https://raw.github.com/cnkevinlee/ethbar/master/Resources/github-cover.png)
+![cover-image](https://raw.github.com/cnkevinlee/ethbar/master/Resources/github_cover.png)
 
 EthBAR is a status bar widget for OS X that displays the latest price of Ethercoin(ETH) from API of yunbi.com. Based on the great app btcbar https://github.com/nearengine/btcbar
 
