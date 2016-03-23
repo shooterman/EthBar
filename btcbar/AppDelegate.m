@@ -28,13 +28,14 @@
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
                [[YunbiEthFetcher alloc] init],
+               [[YunbiBtcFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
     if (![prefs integerForKey:@"btcbar_ticker_index"])
         [prefs setInteger:0 forKey:@"btcbar_ticker_index"];
     currentFetcherTag = [prefs integerForKey:@"btcbar_ticker_index"];
-    
+
     // Clean up legacy preference
     [prefs removeObjectForKey:@"btcbar_ticker"];
 
@@ -52,6 +53,7 @@
         new_menuitem.tag = [tickers indexOfObject:ticker];
         [btcbarMainMenu addItem:new_menuitem];
     }
+    [btcbarMainMenu addItem:[NSMenuItem separatorItem]];
     [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"Open in Browser" action:@selector(menuActionBrowser:) keyEquivalent:@""]];
 
     // Add the separator, Open in Browser, and Quit items to main menu
@@ -170,9 +172,9 @@
                                    alternateButton:@"Cancel"
                                        otherButton:@""
                          informativeTextWithFormat:kWebAddress];
-    
+
     long button = [alert runModal];
-    
+
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     switch (button) {
         case NSAlertOtherReturn:
@@ -189,7 +191,7 @@
         }
         case NSAlertAlternateReturn:
             break;
-            
+
         default:
             break;
     }

@@ -1,24 +1,24 @@
 //
-//  OKCoinUSDFetcher.m
-//  btcbar
+//  YunbiBtcFetcher.m
+//  EthBar
 //
-//  Created by Tim Daubenschütz on 22/01/15.
-//  Copyright (c) 2015 nearengine. All rights reserved.
+//  Created by shooter on 3/23/16.
+//  Copyright © 2016 cnkevinlee. All rights reserved.
 //
 
-#import "YunbiEthFetcher.h"
+#import "YunbiBtcFetcher.h"
 
-@implementation YunbiEthFetcher
+@implementation YunbiBtcFetcher
 
 - (id)init
 {
     if (self = [super init])
     {
         // Menu Item Name
-        self.ticker_menu = @"云币 ETH";
+        self.ticker_menu = @"云币 BTC";
 
         // Website location
-        self.url = @"https://yunbi.com/markets/ethcny";
+        self.url = @"https://yunbi.com/markets/btccny";
 
         // Immediately request first update
         [self requestUpdate];
@@ -40,10 +40,10 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/ethcny.json"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/btccny.json"]];
 
     // Set the request's user agent
-    [request addValue:@"btcbar/2.0 (YunbiEthFetcher)" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"btcbar/2.0 (YunbiBtcFetcher)" forHTTPHeaderField:@"User-Agent"];
 
     // Initialize a connection from our request
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -120,3 +120,4 @@
 
 
 @end
+

@@ -6,6 +6,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "YunbiEthFetcher.h"
+#import "YunbiBtcFetcher.h"
 
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
