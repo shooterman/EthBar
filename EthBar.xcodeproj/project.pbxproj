@@ -14,6 +14,7 @@
 		83C3E74F1859702000FA2921 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E74E1859702000FA2921 /* MainMenu.xib */; };
 		83C3E759185970C800FA2921 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E758185970C800FA2921 /* Icon.icns */; };
 		B05DB4311CA2B8BC0026CAAC /* YunbiBtcFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */; };
+		B0CBBAAC1CE173E500954799 /* YunbiDgdFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */; };
 		E79030461C983D5A00758435 /* ethlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E79030441C983D5A00758435 /* ethlogo.png */; };
 		E79030471C983D5A00758435 /* ethlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E79030451C983D5A00758435 /* ethlogo@2x.png */; };
 		E79030491C983E6A00758435 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79030481C983E6A00758435 /* Images.xcassets */; };
@@ -38,6 +39,8 @@
 		83C3E758185970C800FA2921 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = ../Resources/Icon.icns; sourceTree = "<group>"; };
 		B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiBtcFetcher.m; path = Fetchers/YunbiBtcFetcher.m; sourceTree = "<group>"; };
 		B05DB4301CA2B8BC0026CAAC /* YunbiBtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiBtcFetcher.h; path = Fetchers/YunbiBtcFetcher.h; sourceTree = "<group>"; };
+		B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiDgdFetcher.m; path = Fetchers/YunbiDgdFetcher.m; sourceTree = "<group>"; };
+		B0CBBAAD1CE1788400954799 /* YunbiDgdFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiDgdFetcher.h; path = Fetchers/YunbiDgdFetcher.h; sourceTree = "<group>"; };
 		E79030441C983D5A00758435 /* ethlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ethlogo.png; path = Icons/ethlogo.png; sourceTree = "<group>"; };
 		E79030451C983D5A00758435 /* ethlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ethlogo@2x.png"; path = "Icons/ethlogo@2x.png"; sourceTree = "<group>"; };
 		E79030481C983E6A00758435 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ethbar/Images.xcassets; sourceTree = "<group>"; };
@@ -133,7 +136,9 @@
 		838F4297182E5A5000B4FC58 /* Fetchers */ = {
 			isa = PBXGroup;
 			children = (
+				B0CBBAAD1CE1788400954799 /* YunbiDgdFetcher.h */,
 				B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */,
+				B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */,
 				B05DB4301CA2B8BC0026CAAC /* YunbiBtcFetcher.h */,
 				E790304A1C98450900758435 /* YunbiEthFetcher.h */,
 				E790304B1C98450900758435 /* YunbiEthFetcher.m */,
@@ -218,6 +223,7 @@
 			files = (
 				830CE09D171B6C3E00DDD525 /* main.m in Sources */,
 				B05DB4311CA2B8BC0026CAAC /* YunbiBtcFetcher.m in Sources */,
+				B0CBBAAC1CE173E500954799 /* YunbiDgdFetcher.m in Sources */,
 				E790304C1C98450900758435 /* YunbiEthFetcher.m in Sources */,
 				830CE0A4171B6C3E00DDD525 /* AppDelegate.m in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 #import "YunbiEthFetcher.h"
 #import "YunbiBtcFetcher.h"
-
+#import "YunbiDgdFetcher.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     NSMenu *btcbarMainMenu;

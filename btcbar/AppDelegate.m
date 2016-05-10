@@ -29,6 +29,7 @@
     tickers = [NSMutableArray arrayWithObjects:
                [[YunbiEthFetcher alloc] init],
                [[YunbiBtcFetcher alloc] init],
+               [[YunbiDgdFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
@@ -53,6 +54,7 @@
         new_menuitem.tag = [tickers indexOfObject:ticker];
         [btcbarMainMenu addItem:new_menuitem];
     }
+    [btcbarMainMenu addItem:[NSMenuItem separatorItem]];
     [btcbarMainMenu addItem:[NSMenuItem separatorItem]];
     [btcbarMainMenu addItem:[[NSMenuItem alloc] initWithTitle:@"Open in Browser" action:@selector(menuActionBrowser:) keyEquivalent:@""]];
 
