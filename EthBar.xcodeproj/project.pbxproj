@@ -13,6 +13,7 @@
 		830CE0A4171B6C3E00DDD525 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 830CE0A3171B6C3E00DDD525 /* AppDelegate.m */; };
 		83C3E74F1859702000FA2921 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E74E1859702000FA2921 /* MainMenu.xib */; };
 		83C3E759185970C800FA2921 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83C3E758185970C800FA2921 /* Icon.icns */; };
+		B03FE1441DB8A2870094FF48 /* YunbiFirstbloodFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B03FE1431DB8A2870094FF48 /* YunbiFirstbloodFetcher.m */; };
 		B05DB4311CA2B8BC0026CAAC /* YunbiBtcFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */; };
 		B0CBBAAC1CE173E500954799 /* YunbiDgdFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */; };
 		E79030461C983D5A00758435 /* ethlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E79030441C983D5A00758435 /* ethlogo.png */; };
@@ -37,6 +38,8 @@
 		838F4296182E2F6E00B4FC58 /* Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fetcher.h; sourceTree = "<group>"; };
 		83C3E74E1859702000FA2921 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Views/MainMenu.xib; sourceTree = "<group>"; };
 		83C3E758185970C800FA2921 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Icon.icns; path = ../Resources/Icon.icns; sourceTree = "<group>"; };
+		B03FE1421DB8A2510094FF48 /* YunbiFirstbloodFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YunbiFirstbloodFetcher.h; sourceTree = "<group>"; };
+		B03FE1431DB8A2870094FF48 /* YunbiFirstbloodFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YunbiFirstbloodFetcher.m; sourceTree = "<group>"; };
 		B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiBtcFetcher.m; path = Fetchers/YunbiBtcFetcher.m; sourceTree = "<group>"; };
 		B05DB4301CA2B8BC0026CAAC /* YunbiBtcFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YunbiBtcFetcher.h; path = Fetchers/YunbiBtcFetcher.h; sourceTree = "<group>"; };
 		B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YunbiDgdFetcher.m; path = Fetchers/YunbiDgdFetcher.m; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				B0CBBAAD1CE1788400954799 /* YunbiDgdFetcher.h */,
 				B05DB42F1CA2B8BC0026CAAC /* YunbiBtcFetcher.m */,
 				B0CBBAAB1CE173E500954799 /* YunbiDgdFetcher.m */,
+				B03FE1421DB8A2510094FF48 /* YunbiFirstbloodFetcher.h */,
+				B03FE1431DB8A2870094FF48 /* YunbiFirstbloodFetcher.m */,
 				B05DB4301CA2B8BC0026CAAC /* YunbiBtcFetcher.h */,
 				E790304A1C98450900758435 /* YunbiEthFetcher.h */,
 				E790304B1C98450900758435 /* YunbiEthFetcher.m */,
@@ -226,6 +231,7 @@
 				B0CBBAAC1CE173E500954799 /* YunbiDgdFetcher.m in Sources */,
 				E790304C1C98450900758435 /* YunbiEthFetcher.m in Sources */,
 				830CE0A4171B6C3E00DDD525 /* AppDelegate.m in Sources */,
+				B03FE1441DB8A2870094FF48 /* YunbiFirstbloodFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

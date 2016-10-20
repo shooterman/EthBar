@@ -27,9 +27,9 @@
 
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
-               [[YunbiEthFetcher alloc] init],
                [[YunbiBtcFetcher alloc] init],
-               [[YunbiDgdFetcher alloc] init],
+               [[YunbiEthFetcher alloc] init],
+               [[YunbiFirstbloodFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
@@ -187,7 +187,7 @@
         case NSAlertDefaultReturn:
         {
             NSLog(@"Don't copy");
-            NSString* url=@"http://kevin-li.com/";
+            NSString* url=@"https://yunbi.com/";
             [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
             break;
         }
