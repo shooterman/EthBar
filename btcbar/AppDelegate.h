@@ -5,9 +5,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "YunbiEthFetcher.h"
 #import "YunbiBtcFetcher.h"
+#import "YunbiEthFetcher.h"
 #import "YunbiFirstbloodFetcher.h"
+#import "YunbiZecFetcher.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     NSMenu *btcbarMainMenu;

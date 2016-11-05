@@ -28,8 +28,9 @@
     // Pass each ticker object into a dictionary, get first updates
     tickers = [NSMutableArray arrayWithObjects:
                [[YunbiBtcFetcher alloc] init],
-               [[YunbiEthFetcher alloc] init],
+//             [[YunbiEthFetcher alloc] init],
                [[YunbiFirstbloodFetcher alloc] init],
+               [[YunbiZecFetcher alloc] init],
                nil];
 
     // If ticker preference does not exist, default to 0
