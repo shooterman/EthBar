@@ -40,7 +40,7 @@
 // Initiates an asyncronous HTTP connection
 - (void)requestUpdate
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com//api/v2/tickers/ethcny.json"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://yunbi.com/api/v2/tickers/ethcny.json"]];
 
     // Set the request's user agent
     [request addValue:@"btcbar/2.0 (YunbiEthFetcher)" forHTTPHeaderField:@"User-Agent"];
